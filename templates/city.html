@@ -1,0 +1,55 @@
+<!doctype html>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="top-on-page">
+<h1>Risk Analysis for {{city}}</h1>
+<h2>Probability of Earthquake: {{probability}}</h2>
+<h2>Enter values for the parameters:</h2>
+</div>
+
+<div class="center-on-page">
+<form class="form-inline" method="POST" action="{{ url_for('city_result') }}">
+<h2>Parameter1</h2>
+   <div class="select">
+    <select name="comp_selectA1" class="selectpicker form-control">
+    {% for o in parameter1 %}
+     <option value="{{ o.name }}">{{ o.name }}</option>
+    {% endfor %}
+    </select>
+   </div>
+<h2>Parameter 2</h2>
+   <div class="select">
+    <select name="comp_selectA2" class="selectpicker form-control">
+    {% for o in parameter2 %}
+     <option value="{{ o.name }}">{{ o.name }}</option>
+    {% endfor %}
+    </select>
+   </div>
+<h2>Parameter 3</h2>
+   <div class="select">
+    <select name="comp_selectA3" class="selectpicker form-control">
+    {% for o in parameter3 %}
+     <option value="{{ o.name }}">{{ o.name }}</option>
+    {% endfor %}
+    </select>
+   </div>
+<h2>Parameter 4</h2>   
+   <div class="select">
+    <select name="comp_selectA4" class="selectpicker form-control">
+    {% for o in parameter4 %}
+     <option value="{{ o.name }}">{{ o.name }}</option>
+    {% endfor %}
+    </select>
+   </div>
+<h2>Parameter 5</h2>   
+   <div class="select">
+    <select name="comp_selectA5" class="selectpicker form-control">
+    {% for o in parameter5 %}
+     <option value="{{ o.name }}">{{ o.name }}</option>
+    {% endfor %}
+    </select>
+   </div>
+
+   <button type="submit" class="btn">Go</button>
+</form>
+</div>

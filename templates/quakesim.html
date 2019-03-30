@@ -1,0 +1,23 @@
+<!doctype html>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="top-on-page">
+	<h1><font color="fffff0">QuakeSim 1.0</font></h1>
+	<h2><font color="ffffff">Securing your homes (and yer mum)</font></h2>
+</div>
+
+<div class="top-on-page">
+  <form class="form-inline" method="POST" action="{{ url_for('about') }}">
+  <h2>
+    <button type="submit" class="btn">About</button>
+  </h2>
+</form>
+</div>
+
+<div class="top-on-page">
+  <form class="form-inline" method="POST" action="{{ url_for('start') }}">
+  <h2>
+    <button type="submit" class="btn">Start!</button>
+  </h2>
+</form>
+</div>

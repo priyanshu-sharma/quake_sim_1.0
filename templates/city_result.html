@@ -1,0 +1,15 @@
+<!doctype html>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="center-on-page">
+
+	{% set my_string = "static/img/0" + data + "d.svg" %}
+	<h1>
+  		<img src="{{ my_string }}" class="svg" fill="white" height="100" vertical-align="middle" width="100">
+	</h1> 
+
+	<h1><strong>Grade</strong>: {{data}} <br></h1>
+	<h1><strong>Risk factor for </strong> {{city}} <strong> is </strong>{{risk}}
+
+</div>

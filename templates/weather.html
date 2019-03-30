@@ -1,0 +1,66 @@
+<!doctype html>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="top-on-page">
+	<h1><font color="fffff0">Earthquake Grade Predictor</font></h1>
+	<h2><font color="ffffff">Enter values for the parameters:</font></h2>
+</div>
+
+<div class="center-on-page">
+	<form class="form-inline" method="POST" action="{{ url_for('result') }}">
+		<h2>City</h2>
+   		<div class="select">
+    		<select name="comp_city" class="selectpicker form-control">
+    			{% for o in cities %}
+     				<option value="{{ o.name }}">{{ o.name }}</option>
+    			{% endfor %}
+    		</select>
+   		</div>
+		<h2>Building Height (Feet)</h2>
+   		<div class="select">
+    		<input name="comp_select1" type="integer">
+    		</input>
+   		</div>
+		<h2>Condition</h2>
+   		<div class="select">
+   			<input name="comp_select2" type="integer">
+    		</input>
+   		</div>
+		<h2>Floor Count</h2>
+   		<div class="select">
+    		<input name="comp_select3" type="integer">
+    		</input>
+   		</div>
+		<h2>Ward ID</h2>   
+   		<div class="select">
+    		<input name="comp_select4" type="integer">
+    		</input>
+   		</div>
+		<h2>Area (Sq.Ft)</h2>   
+   		<div class="select">
+    		<input name="comp_select5" type="integer">
+    		</input>
+   		</div>
+   		<h2>Building Age</h2>   
+   		<div class="select">
+    		<input name="comp_select6" type="integer">
+    		</input>
+   		</div>
+   		<h2>VDCMUN ID</h2>   
+   		<div class="select">
+    		<input name="comp_select7" type="integer">
+    		</input>
+   		</div>
+   		<h2>Area Assesed</h2>   
+   		<div class="select">
+    		<input name="comp_select8" type="integer">
+    		</input>
+   		</div>
+
+    	<button type="submit" class="btn">Go</button>
+	</form>
+</div>
+
+<div class="bottom_on_page">
+	<a href="/map"><font color="#42cef4">Choose a city.</font></a>
+</div>

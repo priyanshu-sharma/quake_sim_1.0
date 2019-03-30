@@ -1,0 +1,25 @@
+<!doctype html>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <head>
+            {{"decoupled-map"|googlemap_js(19.07283,72.88261, markers=[(19.07283,72.88261)])}}
+            {{mymap.js}}
+    </head>
+    <div class="top-on-page">
+    	<h1>Choose your preferred location</h1>
+    	<form class="form-inline" method="POST" action="{{ url_for('city') }}">
+    		<div class="select">
+    			<select name="city_select" class="selectpicker form-control">
+    				{% for o in cities %}
+     					<option value="{{ o.name }}">{{ o.name }}</option>
+    				{% endfor %}
+    			</select>
+    		</div>
+    		<button type="submit" class="btn">Go</button>
+    	</form>
+    </div>
+    <div class="centre-on-page">
+        <div class="map">
+        	{{mymap.html}}
+    	</div>
+
+    </div>
